@@ -4,7 +4,7 @@ if(!isset($_SESSION)) {
 }
 
 if(!isset($_SESSION['id'])) {
-    die ("voce nao pde acessar essa pagina porque nao esta logado.<p><a href=\"index.php\">Entrar</a></p>");
+    die ("você não pode acessar essa pagina porque não esta logado.<p><a href=\"login.php\">Entrar</a></p>");
 }
 
 ?>
