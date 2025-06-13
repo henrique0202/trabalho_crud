@@ -1,11 +1,12 @@
 <?php
 include('conexao.php');
+$mensagem = "";
 
 if(isset($_POST['email']) || isset($_POST['senha'])) {
     if(strlen($_POST['email']) == 0) {
-        echo "preencha seu email";
+       $mensagem = "preencha seu email";
     } else if (strlen($_POST['senha']) == 0) {
-        echo "preencha sua senha";
+       $mensagem = "preencha sua senha";
     } else{
 
         $Email = $_POST['email'];
@@ -30,7 +31,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             header("Location: painel.php");
 
         } else {
-            echo "<div class = 'exibir'>email ou senha incorretos. verifique novamente.</div>";
+          $mensagem = "<div class = 'exibir'>email ou senha incorretos. verifique novamente.</div>";
         }
     }
 }
@@ -47,6 +48,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     <div class="login">
         <form action="" method="post" class="login">
             <img src="logo2.png" alt="" width="300px" >
+            <?php if(!empty($mensagem)) { echo $mensagem; } ?>
             <h1>LOGIN</h1>
             <label>Email:</label>
             <input type="text" class="input" name = "email">
