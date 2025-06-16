@@ -35,6 +35,9 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
         }
     }
 }
+if (isset($_POST['redirect'])) {
+    header("location: cadastro.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +61,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             <br><br>
             <button class="botao" type="submit">ENTRAR</button>
             <br>
-            <button class="botao2">CADASTRAR-SE</button>
+            <button class="botao2" type="submit" name="redirect">CADASTRAR-SE</button>
         </form>
     </div>
     
