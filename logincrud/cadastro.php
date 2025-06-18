@@ -1,3 +1,12 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $telefone = $_POST['telefone'];
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +27,9 @@
             <br><br>
             <label>Senha:</label>
             <input type="password"  class="input" name = "senha">
+            <br><br>
+            <label>telefone:</label>
+            <input type="tel" class="input" name = "telefone">
             <br><br>
             <button class="botao2">CADASTRAR-SE</button>
         </form>
