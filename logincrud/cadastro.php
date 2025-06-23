@@ -1,30 +1,31 @@
 <?php
 include('conexao.php');
+$mensagem = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $telefone = $_POST['telefone'];
 
-    if (empty($nome) || empty($email) || empty($senha)) {
-        echo 'preencha nome,email e senha obrigatoriamente';
+    if (empty($nome) || empty($email) || empty($senha) || empty($telefone)) {
+        $mensagem = 'preencha nome,email e senha obrigatoriamente';
     } else {
         $verifica = $pdo->prepare("SELECT id FROM clientes WHERE email = :email");
-        $verifica->execute(['email => $email']);
+        $verifica->execute(['email' => $email ]);
 
         if ($verifica->rowCount() > 0) {
-            echo "este email está cadastrado. faça login.";
+            $mensagem = "este email está cadastrado. faça login.";
         } else {
-            $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
             $inserir = $pdo->prepare("INSERT INTO clientes (nome, telefone, email, senha) VALUES(:nome, :telefone, :email, :senha)");
             $inserir->execute([
                 'nome' => $nome,
                 'telefone' => $telefone,
                 'email' => $email,
-                'senha' => $senha_cripto
+                'senha' => $senha
             ]);
 
-            echo "<div> cadastro realizado com sucesso! <a href='login.php'>Fazer login</a></div>";
+            $mensagem = "<div> cadastro realizado com sucesso! <a href='login.php'>Fazer login</a></div>";
         }
     }
 }
@@ -43,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="login">
         <form action="" method="post" class="login">
             <img src="logo2.png" alt="" width="300px">
+            <?php if(!empty($mensagem)) { echo $mensagem; } ?>
             <label>Nome completo:</label>
             <input type="text" class="input" name="nome" required>
             <br><br>
