@@ -11,12 +11,16 @@ include("protect.php");
 </head>
 <body>
     bem vindo ao painel, <?php echo $_SESSION['nome']; ?>
-    <p>
-        <a href="logout.php">Sair</a>
-        
-    </p>
-    <p>
-        <a href="listar.php">Listar Clientes</a>
-</p>
+<div class="sidebar">
+        <h2 class="logo">Mesajá</h2>
+        <nav>
+            <ul>
+                <li><a href="#">🏠 Início</a></li>
+                <li><a href="#">📅 Reservas</a></li>
+                <li><a href="#">👤 Perfil</a></li>
+            </ul>
+        </nav>
+        <a href="logout.php" class="logout">Sair</a>
+    </div>
 </body>
 </html>
