@@ -17,8 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
     $telefone = $_POST['telefone'];
     $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-    $sql = "UPDATE clientes SET nome = :nome, telefone = :telefone, email = :email WHERE id = :id";
+    $sql = "UPDATE clientes SET nome = :nome, telefone = :telefone, email = :email, senha = :senha WHERE id = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
         'nome' => $nome,
@@ -50,6 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <label>Email:</label><br>
         <input type="email" name="email" value="<?= $cliente['email'] ?>" required><br><br>
+
+        <label>Senha:</label><br>
+        <input type="senha" name="senha" value="<?= $cliente['senha'] ?>" required><br><br>
+
 
         <button type="submit">Salvar</button>
     </form>

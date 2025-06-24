@@ -13,6 +13,10 @@ include("protect.php");
     bem vindo ao painel, <?php echo $_SESSION['nome']; ?>
     <p>
         <a href="logout.php">Sair</a>
+        
     </p>
+    <p>
+        <a href="listar.php">Listar Clientes</a>
+</p>
 </body>
 </html>
