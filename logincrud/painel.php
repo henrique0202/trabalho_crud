@@ -15,9 +15,10 @@ include("protect.php");
         <h2 class="logo">Mesajá</h2>
         <nav>
             <ul>
-                <li><a href="#">🏠 Início</a></li>
-                <li><a href="#">📅 Reservas</a></li>
-                <li><a href="#">👤 Perfil</a></li>
+                <li><a href="mesas_listar.php"> Mesas</a></li>
+                <li><a href=""> Reservas</a></li>
+                <li><a href="listar.php"> Perfil</a></li>
+                <li><a href="mesas_cadastrar.php"> Cadastrar mesa</a></li>
             </ul>
         </nav>
         <a href="logout.php" class="logout">Sair</a>
