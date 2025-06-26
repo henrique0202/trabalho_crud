@@ -28,20 +28,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="login">
         <h2>Cadastrar Nova Mesa</h2>
         <form method="post">
             <label>Número:</label><br>
-            <input type="number" name="numero" required><br><br>
+            <input type="number" name="numero" required class="input"><br><br>
 
             <label>Capacidade:</label><br>
-            <input type="number" name="capacidade" required><br><br>
+            <input type="number" name="capacidade" required class="input"><br><br>
 
-            <label><input type="checkbox" name="disponibilidade" checked> Disponível</label><br><br>
+            <label><input type="checkbox" name="disponibilidade" checked class="input"> Disponível</label><br><br>
 
-            <button type="submit">Salvar</button>
+            <button type="submit" class="botao">Salvar</button>
         </form>
-        <br><a href="mesas_listar.php">← Voltar para lista</a>
+        <br><a href="mesas_listar.php" class="link">Voltar para lista</a>
+        <a href="painel.php" class="link">voltar para o painel</a>
     </div>
 </body>
 </html>

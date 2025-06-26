@@ -9,12 +9,12 @@ include("protect.php");
 <head>
     <meta charset="UTF-8">
     <title>Lista de Mesas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <div class="container">
         <h2>Mesas Cadastradas</h2>
-        <a href="mesas_cadastrar.php">+ Cadastrar nova mesa</a><br><br>
+        <a href="mesas_cadastrar.php" class="link">+ Cadastrar nova mesa</a><br><br>
 
         <table border="1" cellpadding="8" cellspacing="0">
             <tr>
@@ -40,6 +40,8 @@ include("protect.php");
             }
             ?>
         </table>
+        <br>
+         <a href="painel.php" class="link">voltar para o painel</a>
     </div>
 </body>
 </html>

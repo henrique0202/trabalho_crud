@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefone = $_POST['telefone'];
 
     if (empty($nome) || empty($email) || empty($senha) || empty($telefone)) {
-        $mensagem = 'preencha nome,email e senha obrigatoriamente';
+        $mensagem = 'preencha nome,email,telefone e senha obrigatoriamente';
     } else {
         $verifica = $pdo->prepare("SELECT id FROM clientes WHERE email = :email");
         $verifica->execute(['email' => $email ]);

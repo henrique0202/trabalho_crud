@@ -5,12 +5,12 @@ include("protect.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="painel.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    bem vindo ao painel, <?php echo $_SESSION['nome']; ?>
 <div class="sidebar">
         <h2 class="logo">Mesajá</h2>
         <nav>
@@ -23,5 +23,6 @@ include("protect.php");
         </nav>
         <a href="logout.php" class="logout">Sair</a>
     </div>
+    <h2> bem vindo ao painel, <?php echo $_SESSION['nome']; ?> </h2>
 </body>
 </html>

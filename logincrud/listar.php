@@ -6,18 +6,20 @@ include("protect.php");
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="style2.css">
     <meta charset="UTF-8">
     <title>Lista de Clientes</title>
 </head>
 <body>
-    <h2 style="text-align:center;">Lista de Clientes</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div>
+        <h2 style="text-align:center;">Lista de Clientes</h2>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
         <?php
         $stmt = $pdo->query("SELECT * FROM clientes ORDER BY id DESC");
         while ($cliente = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -33,8 +35,10 @@ include("protect.php");
             </tr>";
         }
         ?>
-        </tbody>
-    </table>
-    <p style="text-align:center;"><a href="cadastro.php">Cadastrar novo cliente</a></p>
+            </tbody>
+        </table>
+        <p style="text-align:center;"><a href="cadastro.php" class="link">Cadastrar novo cliente</a></p>
+        <p style="text-align:center;"><a href="painel.php" class="link">voltar para o painel</a></p>
+    </div>
 </body>
 </html>
