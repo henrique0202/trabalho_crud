@@ -5,14 +5,14 @@ include("protect.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $numero = $_POST['numero'];
     $capacidade = $_POST['capacidade'];
-    $disponivel = isset($_POST['disponivel']) ? 1 : 0;
+    $disponibilidade = isset($_POST['disponibilidade']) ? 1 : 0;
 
-    $sql = "INSERT INTO mesas (numero, capacidade, disponivel) VALUES (:numero, :capacidade, :disponivel)";
+    $sql = "INSERT INTO mesas (numero, capacidade,disponibilidade) VALUES (:numero, :capacidade, :disponibilidade)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
         'numero' => $numero,
         'capacidade' => $capacidade,
-        'disponivel' => $disponivel
+        'disponibilidade' => $disponibilidade
     ]);
 
     header("Location: mesas_listar.php");
