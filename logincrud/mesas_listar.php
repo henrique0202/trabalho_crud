@@ -23,7 +23,7 @@ while ($mesa = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <td>{$mesa['id']}</td>
         <td>{$mesa['numero']}</td>
         <td>{$mesa['capacidade']}</td>
-        <td>" . ($mesa['disponivel'] ? 'Sim' : 'Não') . "</td>
+        <td>" . ($mesa['disponibilidade'] ? 'Sim' : 'Não') . "</td>
         <td>
             <a href='mesas_editar.php?id={$mesa['id']}'>Editar</a> | 
             <a href='mesas_excluir.php?id={$mesa['id']}' onclick='return confirm(\"Tem certeza?\")'>Excluir</a>
