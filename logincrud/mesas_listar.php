@@ -1,4 +1,8 @@
-<?php include('conexao.php'); ?>
+<?php
+include('conexao.php');
+include("protect.php");
+
+?>
 
 <h2>Mesas</h2>
 <p><a href="mesas_cadastrar.php">+ Nova mesa</a></p>
