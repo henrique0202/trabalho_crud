@@ -48,9 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Capacidade:</label><br>
             <input type="number" name="capacidade" value="<?= $mesa['capacidade'] ?>" required><br><br>
 
-            <label>Localização:</label><br>
-            <input type="text" name="localizacao" value="<?= $mesa['localizacao'] ?>"><br><br>
-
             <label>Disponível:</label><br><br>
                 <input type="checkbox" name="disponibilidade" <?= $mesa['disponibilidade'] ? 'checked' : '' ?>>
 
