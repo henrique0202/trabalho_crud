@@ -24,6 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <form method="post">
     Número: <input type="number" name="numero" required><br><br>
     Capacidade: <input type="number" name="capacidade" required><br><br>
-    Disponível? <input type="checkbox" name="disponivel" checked><br><br>
+    Disponível? <input type="checkbox" name="disponibilidade" checked><br><br>
     <button type="submit">Salvar</button>
 </form>
