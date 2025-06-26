@@ -1,5 +1,6 @@
 <?php
 include('conexao.php');
+include("protect.php");
 
 $id = $_GET['id'];
 
