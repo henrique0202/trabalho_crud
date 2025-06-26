@@ -1,5 +1,6 @@
 <?php
 include('conexao.php');
+include("protect.php");
 
 if (isset($_GET['id'])) {
     $stmt = $pdo->prepare("DELETE FROM mesas WHERE id = :id");
